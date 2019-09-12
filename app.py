@@ -29,6 +29,7 @@ def plot_setter(df, ticker):
     
     p = figure(width=700, height=400, title="data ticker:"+ticker, tools="")
 
+'''
     hover = HoverTool(tooltips=[
         ( 'date',   '@date{%F}'            ),
         ( 'close',  '$@close{%0.2f}' ),], formatters={
@@ -40,20 +41,20 @@ def plot_setter(df, ticker):
     crosshair = CrosshairTool()
     crosshair.dimensions = 'height'
     p.add_tools(crosshair)
-
+'''
     data_to_show = ColumnDataSource(df)
     p.line('date', 'close', source = data_to_show, color="#44ddaa")
 
     p.xaxis.formatter=DatetimeTickFormatter(days=["%d %b"])
     p.x_range=Range1d(df['date'].min(), df['date'].max())
-
+'''
     p.title.text_font_size = "2em"
     p.axis.major_label_text_font_size = "0.875em"
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_alpha = 0.5
     p.outline_line_color = None
     p.yaxis.axis_label = "Closing price"
-    p.xaxis.axis_label = "Date"
+    p.xaxis.axis_label = "Date"'''
     return p
 
 
@@ -80,10 +81,8 @@ def index():
             return invalid()
         ticker_data = data_getter(tick)
         
-		script=plot_setter(ticker_data, tick)
-        
-        '''
-        script, div = components(fig)'''
+		fig=plot_setter(ticker_data, tick)
+        script, div = components(fig)
         return render_template('newtab.html')
 
 if __name__ == '__main__':

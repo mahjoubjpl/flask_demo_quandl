@@ -83,7 +83,7 @@ def index():
 		fig = plot_setter(ticker_data, tick)
 		
         script=show(fig)
-        return render_template('newtab.html')
+        return render_template('index.html', script=script)
 
 if __name__ == '__main__':
   app.run(port=33507)

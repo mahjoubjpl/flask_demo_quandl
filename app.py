@@ -47,15 +47,13 @@ def plot_setter(df, ticker):
     p.toolbar_location = None
 
    
-    p.background_fill_color = "green"
-    p.border_fill_color = "#234567"
-    p.title.text_color = "#ffffff"
+    p.title.text_color = "##000000"
     p.title.text_font_size = "1.25em"
     p.axis.major_label_text_color = "#f"
     p.axis.major_label_text_font_size = "0.875em"
-    p.axis.axis_line_color = "#ffffff"
-    p.axis.major_tick_line_color = "#ffffff"
-    p.axis.minor_tick_line_color = "#ffffff"
+    p.axis.axis_line_color = "##000000"
+    p.axis.major_tick_line_color = "##000000"
+    p.axis.minor_tick_line_color = "##000000"
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_alpha = 0.5
     p.ygrid.grid_line_dash = [4, 6]

@@ -36,10 +36,7 @@ def plot_setter(df, ticker):
     hover.mode = 'vline'
     hover.line_policy = 'nearest'
     p.add_tools(hover)
-    crosshair = CrosshairTool()
-    crosshair.dimensions = 'height'
-    crosshair.line_color = "#ffffff"
-    p.add_tools(crosshair)
+
 
     dfcds = ColumnDataSource(df)
     p.line('date', 'close', source = dfcds, color="#44ddaa")
@@ -50,11 +47,26 @@ def plot_setter(df, ticker):
     p.toolbar_location = None
 
    
-
+    p.background_fill_color = "#234567"
+    p.border_fill_color = "#234567"
+    p.title.text_color = "#ffffff"
+    p.title.text_font_size = "1.25em"
+    p.axis.major_label_text_color = "#ffffff"
+    p.axis.major_label_text_font_size = "0.875em"
+    p.axis.axis_line_color = "#ffffff"
+    p.axis.major_tick_line_color = "#ffffff"
+    p.axis.minor_tick_line_color = "#ffffff"
+    p.xgrid.grid_line_color = None
+    p.ygrid.grid_line_alpha = 0.5
+    p.ygrid.grid_line_dash = [4, 6]
+    p.outline_line_color = None
     p.yaxis.axis_label = "Closing price"
-   
+    p.yaxis.axis_label_text_color = "#ffffff"
+    p.yaxis.axis_label_text_font_size = "1em"
+    p.yaxis.axis_label_text_font_style = "normal"
+    p.yaxis.axis_label_standoff = 12
     
-	return p
+    return p
 
 def invalid():
     error = None

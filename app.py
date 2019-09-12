@@ -26,7 +26,7 @@ def data_getter(ticker):
 
 def plot_setter(df, ticker):
     
-    output_file("templates/toolbar.html")
+    output_file("toolbar.html")
     p = figure(width=700, height=400, title="data ticker:"+ticker, tools="")
 
     hover = HoverTool(tooltips=[

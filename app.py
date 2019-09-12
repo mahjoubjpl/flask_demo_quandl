@@ -7,6 +7,7 @@ from bokeh.plotting import figure, show, output_notebook
 from bokeh.models import ColumnDataSource, DatetimeTickFormatter, \
     Range1d, HoverTool, CrosshairTool
 from bokeh.embed import components
+import quandl
 
 app = Flask(__name__)
 

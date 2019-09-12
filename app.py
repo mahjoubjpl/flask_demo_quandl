@@ -54,7 +54,7 @@ def plot_setter(df, ticker):
     p.outline_line_color = None
     p.yaxis.axis_label = "Closing price"
     p.xaxis.axis_label = "Date"
-    return p
+    return show(p)
 
 
 def error_message():
@@ -80,10 +80,10 @@ def index():
             return invalid()
         ticker_data = data_getter(tick)
 		
-		fig = plot_setter(ticker_data, tick)
+		plot_setter(ticker_data, tick)
 		
         
-        return show(fig)
+        return plot_setter(ticker_data, tick)
 
 if __name__ == '__main__':
   app.run(port=33507)

@@ -25,22 +25,18 @@ def get_ticker(ticker):
     return data
 
 def plot_setter(df, ticker):
-    """Create a time-series line plot in Bokeh."""
-    p = figure(width=600, height=300, title=ticker.upper(), tools="")
 
-    hover = HoverTool(tooltips = """
-    <div>
-    <table>
-    <tr><td class="ttlab">Date:</td><td>@date_str</td></tr>
-    <tr><td class="ttlab">Close:</td><td>@close_str</td></tr>
-    </table>
-    </div>
-    """)
-    
+    p = figure(width=700, height=400, title="Ticker="+ticker, tools="")
+
+    hover = HoverTool(tooltips=[
+        ( 'date',   '@date{%F}'            ),
+        ( 'close',  '$@close{%0.2f}' ),], formatters={
+        'date'      : 'datetime', 
+        'close' : 'printf'})
     hover.mode = 'vline'
     hover.line_policy = 'nearest'
     p.add_tools(hover)
-
+	
     crosshair = CrosshairTool()
     crosshair.dimensions = 'height'
     crosshair.line_color = "#ffffff"

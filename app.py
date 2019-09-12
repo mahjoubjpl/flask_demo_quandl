@@ -13,15 +13,6 @@ app = Flask(__name__)
 
 apikey = "aV6ixxytw_ZyLnA5YZyT"
 
-urlhead = "https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?ticker="
-urldate = "&date.gte="
-urlcols = "&qopts.columns="
-urltail = "&api_key=" + apikey
-
-monthago = date.today() + relativedelta(months=-1)
-date = monthago.strftime("%Y%m%d")
-
-cols = "date,close"
 
 def get_ticker(ticker):
     quandl.ApiConfig.api_key = 'aV6ixxytw_ZyLnA5YZyT'
@@ -33,7 +24,7 @@ def get_ticker(ticker):
 
     return data
 
-def bokehplot(df, ticker):
+def plot_setter(df, ticker):
     """Create a time-series line plot in Bokeh."""
     p = figure(width=600, height=300, title=ticker.upper(), tools="")
 
@@ -110,7 +101,7 @@ def index():
         ticker_df = get_ticker(tick)
         if ticker_df.empty:
             return invalid()
-        fig = bokehplot(ticker_df, tick)
+        fig = plot_setter(ticker_df, tick)
         script, div = components(fig)
         return render_template(
             'index.html',

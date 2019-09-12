@@ -1,6 +1,5 @@
 pandas
 bokeh
-bokehjs
 dill
 flask
 jinja2

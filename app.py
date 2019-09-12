@@ -79,12 +79,12 @@ def index():
         if not tick.isalpha():
             return invalid()
         ticker_data = data_getter(tick)
-        '''
-		fig = plot_setter(ticker_data, tick)
-        '''
+        
+		script= plot_setter(ticker_data, tick)
+        
         '''
         script, div = components(fig)'''
-        return render_template('toolbar.html')
+        return render_template('index.html', script)
 
 if __name__ == '__main__':
   app.run(port=33507)

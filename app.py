@@ -79,8 +79,8 @@ def index():
         if not tick.isalpha():
             return invalid()
         ticker_data = data_getter(tick)
-        '''
-		fig = plot_setter(ticker_data, tick)
+        
+		plot_setter(ticker_data, tick)
         '''
         '''
         script, div = components(fig)'''

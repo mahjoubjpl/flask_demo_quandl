@@ -83,8 +83,7 @@ def index():
         script=show(fig)
         '''
         script, div = components(fig)'''
-        return render_template(
-            'newtab.html')
+        return show(fig)
 
 if __name__ == '__main__':
   app.run(port=33507)

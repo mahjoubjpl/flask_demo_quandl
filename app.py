@@ -26,7 +26,7 @@ def data_getter(ticker):
 
 def plot_setter(df, ticker):
     
-    output_file("toolbar.html")
+    output_file("templates/toolbar.html")
     p = figure(width=700, height=400, title="data ticker:"+ticker, tools="")
 
     hover = HoverTool(tooltips=[
@@ -78,15 +78,13 @@ def index():
         tick = request.form['ticker_text']
         if not tick.isalpha():
             return invalid()
-		
-        
-		ticker_data = data_getter(tick)
+        ticker_data = data_getter(tick)
         '''
-		script=plot_setter(ticker_data, tick)
-       
-       
+		fig = plot_setter(ticker_data, tick)
+        '''
+        '''
         script, div = components(fig)'''
-        return render_template('newtab.html')
+        return render_template('toolbar.html')
 
 if __name__ == '__main__':
   app.run(port=33507)

@@ -82,11 +82,9 @@ def index():
         fig = plot_setter(ticker_data, tick)
         script=show(fig)
         '''
-        script, div = components(fig)
+        script, div = components(fig)'''
         return render_template(
-            'index.html',
-            bokeh_script=script,
-            bokeh_div=div)'''
+            'newtab.html')
 
 if __name__ == '__main__':
   app.run(port=33507)

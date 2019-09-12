@@ -6,8 +6,8 @@ from bokeh.plotting import figure, show, output_file
 from bokeh.models import ColumnDataSource, DatetimeTickFormatter, Range1d, HoverTool, CrosshairTool
 
 app = Flask(__name__)
-def data_getter:
-    def data_getter(ticker):
+
+def data_getter(ticker):
     quandl.ApiConfig.api_key = 'aV6ixxytw_ZyLnA5YZyT'
     data = quandl.get_table('WIKI/PRICES', ticker = [ticker],
                         qopts = { 'columns': ['date', 'close'] },

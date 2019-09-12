@@ -82,8 +82,8 @@ def index():
 		
 		fig = plot_setter(ticker_data, tick)
 		
-        script=show(fig)
-        return script
+        
+        return show(fig)
 
 if __name__ == '__main__':
   app.run(port=33507)

@@ -84,7 +84,7 @@ def index():
         '''
         '''
         script, div = components(fig)'''
-        return plot_setter(ticker_data, tick)
+        return render_template('toolbar.html')
 
 if __name__ == '__main__':
   app.run(port=33507)

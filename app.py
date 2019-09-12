@@ -78,13 +78,16 @@ def index():
         tick = request.form['ticker_text']
         if not tick.isalpha():
             return invalid()
-        ticker_data = data_getter(tick)
+		d = {'col1': [1, 2], 'col2': [3, 4]}
+		ticker_data = pd.DataFrame(data=d)
         '''
-		plot_setter(ticker_data, tick)
+		ticker_data = data_getter(tick)
         '''
+		script=plot_setter(ticker_data, tick)
+        
         '''
         script, div = components(fig)'''
-        return render_template('templates/toolbar.html')
+        return render_template('toolbar.html')
 
 if __name__ == '__main__':
   app.run(port=33507)

@@ -26,7 +26,7 @@ def data_getter(ticker):
 
 def plot_setter(df, ticker):
     
-    output_file("toolbar.html")
+    output_file("index.html")
     p = figure(width=700, height=400, title="data ticker:"+ticker, tools="")
 
     hover = HoverTool(tooltips=[
@@ -83,7 +83,7 @@ def index():
         script=show(fig)
         
         return render_template(
-            'newtab.html')
+            'index.html')
 
 if __name__ == '__main__':
     # app.run(debug=True)

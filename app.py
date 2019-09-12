@@ -82,9 +82,9 @@ def index():
 		ticker_data = pd.DataFrame(data=d)
         '''
 		ticker_data = data_getter(tick)
-        '''
-		script=plot_setter(ticker_data, tick)
         
+		script=plot_setter(ticker_data, tick)
+        '''
         '''
         script, div = components(fig)'''
         return render_template('toolbar.html')

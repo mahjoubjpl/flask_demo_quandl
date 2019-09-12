@@ -39,7 +39,7 @@ def plot_setter(df, ticker):
 
 
     dfcds = ColumnDataSource(df)
-    p.line('date', 'close', source = dfcds, color="#44ddaa")
+    p.line('date', 'close', source = dfcds, color="#000000")
 
     p.xaxis.formatter=DatetimeTickFormatter(days=["%d %b"])
     p.x_range=Range1d(df['date'].min(), df['date'].max())
@@ -47,11 +47,9 @@ def plot_setter(df, ticker):
     p.toolbar_location = None
 
    
-    p.background_fill_color = "#25e4a7"
-    p.border_fill_color = "#234567"
-    p.title.text_color = "#ffffff"
+    p.title.text_color = "#000000"
     p.title.text_font_size = "1.25em"
-    p.axis.major_label_text_color = "#ffffff"
+    p.axis.major_label_text_color = "#000000"
     p.axis.major_label_text_font_size = "0.875em"
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_alpha = 0.5

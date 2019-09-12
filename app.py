@@ -83,7 +83,7 @@ def index():
         script=show(fig)
         '''
         script, div = components(fig)'''
-        return show(fig)
+        return script
 
 if __name__ == '__main__':
   app.run(port=33507)

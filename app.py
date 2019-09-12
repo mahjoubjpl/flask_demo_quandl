@@ -23,21 +23,14 @@ date = monthago.strftime("%Y%m%d")
 cols = "date,close"
 
 def get_ticker(ticker):
-    """Retrieve and process Quandl data for given ticker symbol.
-    Retrieves the last month of closing price data for the given ticker
-    symbol. Returns a pandas DataFrame.
-    """
-    url = urlhead + ticker + urldate + date + urlcols + cols + urltail
-    try:
-        page = requests.get(url)
-        json = page.json()
-    except ValueError:
-        return pd.DataFrame()
-    df = pd.DataFrame(json['datatable']['data'], columns=['date','close'])
-    df['date'] = pd.to_datetime(df['date'])
-    df['date_str'] = df['date'].map(lambda x: x.strftime("%Y-%m-%d"))
-    df['close_str'] = df['close'].map(lambda x: '{:,.2f}'.format(x))
-    return df
+    quandl.ApiConfig.api_key = 'aV6ixxytw_ZyLnA5YZyT'
+    data = quandl.get_table('WIKI/PRICES', ticker = [ticker], 
+                        qopts = { 'columns': ['date', 'close'] }, 
+                        date = { 'gte': '2015-08-09', 'lte': '2015-09-09' }, 
+                        paginate=True)
+    data['date'] = pd.to_datetime(data['date'])
+
+    return data
 
 def bokehplot(df, ticker):
     """Create a time-series line plot in Bokeh."""

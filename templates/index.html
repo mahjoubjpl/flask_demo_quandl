@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Data Incubator 12-Day Program Milestone Project</title>
+    <title>Application</title>
 
     <link href="static/style.css" rel="stylesheet">
-    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.css"
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.css"
 	  rel="stylesheet" type="text/css">
-    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.js"></script>
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.js"></script>
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.1.0.min.js"></script>
 
-    {{ bokeh_script|indent(4)|safe }}
+  
 
   </head>
 
@@ -19,11 +21,17 @@
       <form id='ticker' method='post' action='index' >
 	<span id="ticklab">Ticker symbol:</span>
 	<input type='text' name='ticker_text' />
-	<input type='submit' value='▶' />
+	<input type='submit' value='Submit' />
+
+
       </form>
     </div>
 
-    {{ bokeh_div|indent(4)|safe }}
+    {{ script }}
+
+    
+     <img src = "{{url_for('static', filename='image.jpg')}}">
+    
     
   </body>
   

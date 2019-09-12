@@ -47,7 +47,7 @@ def plot_setter(df, ticker):
     p.toolbar_location = None
 
    
-    p.background_fill_color = "#234567"
+    p.background_fill_color = "#25e4a7"
     p.border_fill_color = "#234567"
     p.title.text_color = "#ffffff"
     p.title.text_font_size = "1.25em"

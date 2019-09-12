@@ -54,7 +54,7 @@ def plot_setter(df, ticker):
     p.outline_line_color = None
     p.yaxis.axis_label = "Closing price"
     p.xaxis.axis_label = "Date"
-    return show(p)
+    return p
 
 
 def error_message():

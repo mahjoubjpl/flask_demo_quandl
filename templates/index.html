@@ -9,7 +9,7 @@
 	  rel="stylesheet" type="text/css">
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.js"></script>
 
-    {{ bokeh_script|indent(2)|safe }}
+    {{ plot_script|indent(2)|safe }}
 
   </head>
 
@@ -23,7 +23,7 @@
       </form>
     </div>
 
-    {{ bokeh_div|indent(4)|safe }}
+    {{ plot_div|indent(4)|safe }}
 	
 	<img src = "{{url_for('static', filename='image.jpg')}}">
     
